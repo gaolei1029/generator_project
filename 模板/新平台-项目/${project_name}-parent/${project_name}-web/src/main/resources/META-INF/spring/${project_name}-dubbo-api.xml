@@ -1,0 +1,31 @@
+<#include "/macro.include"/>
+<#include "/custom.include"/>
+<#assign className = table.className>
+<#assign classNameLower = className?uncap_first>  
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--<dubbo:application name="<@jspEl 'dubbo.application.name'/>" />-->
+    <!--<dubbo:registry address="<@jspEl 'dubbo.registry.address'/>" />-->
+    <!--<dubbo:protocol name="<@jspEl 'dubbo.protocol.name'/>"  port="<@jspEl 'dubbo.protocol.port'/>" />-->
+
+
+    <dubbo:reference id="${classNameLower}Service" interface="${basepackage}.service.I${className}Service"    />
+
+
+    <dubbo:reference id="sysLogUserLoginService" interface="com.up72.sys.service.ISysLogUserLoginService"/>
+    <dubbo:reference id="sysLogUserOperatorService" interface="com.up72.sys.service.ISysLogUserOperatorService"/>
+    <dubbo:reference id="sysUserService" interface="com.up72.sys.service.ISysUserService"/>
+    <dubbo:reference id="sysMenuService" interface="com.up72.sys.service.ISysMenuService"/>
+    <dubbo:reference id="sysRoleService" interface="com.up72.sys.service.ISysRoleService"/>
+    <dubbo:reference id="sysRoleMenuService" interface="com.up72.sys.service.ISysRoleMenuService"/>
+    <dubbo:reference id="sysManagerRoleService" interface="com.up72.sys.service.ISysManagerRoleService"/>
+
+    <dubbo:consumer retries="0" timeout="6000" injvm="true"/>
+</beans>

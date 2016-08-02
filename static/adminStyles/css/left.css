@@ -1,0 +1,15 @@
+body,ul,li,h1,h2,h3,h4,h5,h6,form,dl,dd,ol{margin:0;padding:0;list-style:none;}
+html,body{height:100%;font-size:12px;}
+dl,dt,dd{display:block;margin:0}
+img{border:0}
+ul,LI{margin:0;padding:0;border-width:0;list-style-type:none}
+a{text-decoration:none}
+.container {width: 100%;height: 100%;margin: auto;}
+.leftsidebar_box {width: 190px;height: auto !important;overflow: visible !important;position:absolute;height: 100% !important;}
+.ControlCenter_nav dt {}
+.leftsidebar_box dt {padding-left: 30px;padding-right: 10px;font-size: 14px;position: relative;line-height: 48px;cursor: pointer;font-family:"Microsoft YaHei"; *padding-top:12px;*padding-bottom:12px;*line-height: 20px;}
+.leftsidebar_box dt img {position: absolute;left: 10px;top: 20px;}
+.leftsidebar_box dd a {padding-left: 50px;display: block; height: 27px; line-height: 27px;padding-top: 5px;margin-top: 1px; font-family:"Microsoft YaHei";}
+.leftsidebar_box dd a:hover {text-decoration:none;}
+.leftsidebar_box dt .icoLeft { display:inline-table; width:10px; height:10px; position:absolute; left:12px; top:43%; }
+.leftsidebar_box dt .icoBottom { display:inline-table; width:10px; height:10px; position:absolute; left:10px; top:43%;}

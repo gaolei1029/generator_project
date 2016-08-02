@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd" default-lazy-init="true">
+    <#include "/macro.include"/>
+    <#include "/custom.include"/>
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="<@jspEl 'redis.pool.maxIdle'/>"/>
+        <property name="testOnBorrow" value="<@jspEl 'redis.pool.testOnBorrow'/>"/>
+    </bean>
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1" value="<@jspEl 'redis.ip'/>"/>
+        <constructor-arg index="2" value="<@jspEl 'redis.port'/>" type="int"/>
+    </bean>
+    <!-- 如果要实现cas的remember me的功能，需要用到下面这个bean，并设置到securityManager的subjectFactory中 -->
+    <bean id="casSubjectFactory" class="org.apache.shiro.cas.CasSubjectFactory"/>
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realms">
+            <list>
+                <ref bean="dbAuthRealm"/>
+            </list>
+        </property>
+        <property name="subjectFactory" ref="casSubjectFactory"/>
+        <property name="cacheManager" ref="clusterShiroCacheManager"/>
+        <!-- <property name="sessionManager" ref="defaultWebSessionManager" />   -->
+    </bean>
+    <bean id="clusterShiroCacheManager" class="com.up72.security.shiro.cache.ClusterShiroCacheManager">
+        <property name="cacheClient" ref="redisCacheClient"/>
+    </bean>
+    <bean id="clusterSessionDao" class="com.up72.security.shiro.session.ClusterSessionDao">
+        <property name="sessionOperation" ref="jedisSessionOperation"/>
+    </bean>
+    <bean id="jedisSessionOperation" class="com.up72.security.shiro.session.JedisSessionOperation">
+        <property name="cacheClient" ref="redisCacheClient"/>
+    </bean>
+    <bean id="defaultWebSessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="globalSessionTimeout" value="1200000"/>
+        <property name="sessionDAO" ref="clusterSessionDao"/>
+    </bean>
+    <bean id="redisCacheClient" class="com.up72.security.redis.RedisCacheClient">
+        <property name="jedisPool" ref="jedisPool"/>
+    </bean>
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <bean id="chainDefinitionSectionMetaSource" class="com.up72.security.shiro.ChainDefinitionSectionMetaSource">
+        <property name="filterChainDefinitions">
+            <value>
+                /jsp/admin/scan/** = anon
+                /user/rest/** = anon
+                /upload/** = anon
+                /scripts/** = anon
+                /adminStyles/** = anon
+                /styles/** = anon
+                /shiro-cas = casFilter
+                /static/** = anon
+                /up72/** = anon
+                /jsp/dt/** = anon
+                /jsp/index.jsp = authc
+                /jsp/admin/** = authc
+                /jsp/menu/** = authc
+            </value>
+        </property>
+    </bean>
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="<@jspEl 'casServerUrlPrefix'/>/login?service=<@jspEl 'casService'/>"/>
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+        <property name="filterChainDefinitionMap" ref="chainDefinitionSectionMetaSource"/>
+        <property name="filters">
+            <util:map>
+                <!-- 添加casFilter到shiroFilter -->
+                <entry key="casFilter" value-ref="casFilter"/>
+            </util:map>
+        </property>
+    </bean>
+
+    <bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
+        <!-- 配置验证错误时的失败页面  -->
+        <property name="failureUrl" value="/error.jsp"/>
+    </bean>
+    <bean id="dbAuthRealm" class="com.up72.security.shiro.realm.DbAuthRealm">
+        <property name="defaultRoles" value="ROLE_USER"/>
+        <property name="casServerUrlPrefix" value="<@jspEl 'casServerUrlPrefix'/>"/>
+        <!-- 客户端的回调地址设置，必须和下面的shiro-cas过滤器拦截的地址一致 -->
+        <property name="casService" value="<@jspEl 'casService'/>"/>
+    </bean>
+</beans>

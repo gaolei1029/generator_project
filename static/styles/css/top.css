@@ -1,0 +1,82 @@
+body {
+	background-color: #317EB4;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+body{font:12px Microsoft YaHei,Arial,Helvetica,sans-serif,Simsun;color:#fff}
+body,div,dl,dt,dd,ul,ol,li,pre,form,fieldset,blockquote,h1,h2,h3,h4,h5,h6,p{margin:0;padding:0}
+LI{list-style-type:none;border-width:0;margin:0px;padding:0px}
+
+
+a:link {
+	color: #fff;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #fff;
+}
+a:active {
+color: #FFEDA6;
+	text-decoration: none;
+}
+body,td,th {
+	font-size: 12px;
+	color: #fff;
+}
+.herder h1{
+	font-size: 26px;
+	line-height: 36px;
+	font-weight: 400;
+	float: left;
+	color: #FFFFFF;
+	padding-left: 18px;
+	padding-top: 8px;
+	margin-right: 6px;
+}
+.herder #nav{
+	float: left;
+	margin-left: 28px;
+	padding-top: 10px;
+	height: 30px;
+}
+.herder #nav li{
+	font-size: 16px;
+	font-weight: 400;
+	float: left;
+	margin-right: 10px;
+	margin-left: 5px;
+	text-align: center;
+	padding-top: 3px;
+	margin-top: 3px;
+	padding-right: 5px;
+	padding-left: 5px;border-radius:4px 4px 0 0;
+
+}
+
+.herder #nav .on{
+	height: 36px;
+	background-color: #FFFFFF;
+	padding-right: 18px;
+	padding-left: 18px;
+	color: #000000;
+	line-height: 16px;
+	padding-top: 8px;
+}
+.herder #nav .on a:link,.herder #nav .on a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+
+
+.herder .u_name{
+	font-size: 12px;
+	float: right;
+	padding-top: 18px;
+	padding-right: 18px;
+}
+a:hover {
+	color: #FFFF00;
+}

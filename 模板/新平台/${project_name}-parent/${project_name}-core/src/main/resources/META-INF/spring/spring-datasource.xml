@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    <!-- 数据源定义
+   <jee:jndi-lookup id="dataSource" jndi-name="<@jspEl 'jdbc.jndiName'/>" />
+   -->
+    <#include "/macro.include"/>
+    <#include "/custom.include"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+
+        <property name="url" value="<@jspEl 'jdbc.url'/>" />
+        <property name="username" value="<@jspEl 'jdbc.username'/>" />
+        <property name="password" value="<@jspEl 'jdbc.password'/>" />
+
+        <property name="filters" value="<@jspEl 'jdbc.filters'/>" />
+
+        <property name="maxActive" value="<@jspEl 'jdbc.maxActive'/>" />
+        <property name="initialSize" value="<@jspEl 'jdbc.initialSize'/>" />
+        <property name="maxWait" value="<@jspEl 'jdbc.maxWait'/>" />
+        <property name="minIdle" value="<@jspEl 'jdbc.minIdle'/>" />
+
+        <property name="timeBetweenEvictionRunsMillis" value="<@jspEl 'jdbc.timeBetweenEvictionRunsMillis'/>" />
+        <property name="minEvictableIdleTimeMillis" value="<@jspEl 'jdbc.minEvictableIdleTimeMillis'/>" />
+
+        <property name="validationQuery" value="<@jspEl 'jdbc.validationQuery'/>" />
+        <property name="testWhileIdle" value="<@jspEl 'jdbc.testWhileIdle'/>" />
+        <property name="testOnBorrow" value="<@jspEl 'jdbc.testOnBorrow'/>" />
+        <property name="testOnReturn" value="<@jspEl 'jdbc.testOnReturn'/>" />
+
+        <property name="poolPreparedStatements" value="<@jspEl 'jdbc.poolPreparedStatements'/>" />
+        <property name="maxOpenPreparedStatements" value="<@jspEl 'jdbc.maxOpenPreparedStatements'/>" />
+
+        <property name="removeAbandoned"  value="<@jspEl 'jdbc.removeAbandoned'/>" />
+        <property name="removeAbandonedTimeout"  value="<@jspEl 'jdbc.removeAbandonedTimeout'/>" />
+    </bean>
+
+
+</beans>

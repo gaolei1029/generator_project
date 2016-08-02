@@ -1,0 +1,264 @@
+/*列表样式*/
+.Tabmember{font-family:"Microsoft YaHei",Simsun;font-size:12px;}
+.Tabmember th{font-weight:400;}
+.Tabmember .thNoRight{border-right-style:none}
+.Tabmember .left{text-align:left;padding-left:5px}
+.Tabmember .txt{text-align:left;padding-left:5px;font-size:12px;line-height:22px}
+.Tabmember .yujing{background-image:url(../images/status-no.gif);background-repeat:no-repeat;background-position:right 15px}
+.Tabmember td{text-align:center}
+.Tabmember .top{ }
+.theme-change{padding:18px 18px 80px 18px;min-width: 1000px;/* display:table;*/ }
+.top-title{padding-bottom: 15px;display: inline-block; width:100%;}
+.top-title h5{display: inline-block;text-indent: 8px;margin-top: 0;margin-bottom: 0;margin-right: 8px;font-size: 15px; line-height: 14px;}
+.top-nav-list{ float:left; width: 100%;}
+.top-nav-list a{display:block;}
+.top-nav-list ul li {margin-left: -1px;	margin-bottom: -1px; position: relative;cursor: pointer;border-radius: 2px 2px 0 0;	text-align: center;float: left;padding: 10px 30px 10px 30px;}
+.top-nav-list a {text-decoration: none;}
+.search-t{padding-top: 20px;padding-left: 10px; padding-bottom: 10px; line-height: 32px;}
+
+/*表单*/
+.addinput { padding: 18px;}
+.addinput li {padding-top: 6px;padding-bottom: 6px; font-family:"Microsoft YaHei";}
+.addinput li span { display:inline-block; width:200px; text-align:right; margin-right:10px;max-width: 100px; margin-top: 5px; vertical-align:top;}
+.addinput li span i{ font-weight:700; margin-right:5px;}
+.addinput li p { display:inline-block;margin-top: 2px;line-height: 22px;}
+.addinput li font { display:inline-block; min-width:100px; margin-right:10px;max-width: 300px; padding-top: 5px;}
+.addinput .lin {padding-left:114px;padding-top: 15px; height:auto;}
+.addinput .lin2 {padding-left:115px;}
+.addinput .hauto {height:auto; width:90%}
+.addinput-two li { height:30px; width:50%; float: left;}
+.addinput-three li { height:30px; width:33%; float: left;}
+.addinput li label{ line-height:18px; display:inline-block; *vertical-align:4px; line-height: 20px; margin-top: 4px;}
+.file{ position:absolute; top:0; right:80px; height:24px; filter:alpha(opacity:0);opacity: 0;width:260px }
+.alert { border-radius: 0; line-height: 18px; margin-bottom: 6px; padding: 6px 12px;}
+
+/*详情列表*/
+.xiangqing{border-bottom:none;width:100%; overflow:hidden;}
+.xiangqing li{width:100%; float:left; }
+.xiangqing li span{padding:6px 0;float:left;font-family: "Microsoft YaHei";}
+.xiangqing li .span1{width:20%;padding-right:10px;}
+.xiangqing li .span2{width:76%; padding-left:10px; }
+.xiangqing li .span3{width:49.5%; padding-right:5px;}
+.xiangqing li .span4{width:49.5%; padding-left:5px;}
+
+/*全部信息*/
+.sourceIco {height: expression(this.width > 60 ? this.height = this.height * 40 / this.width : "auto");width: expression(this.width > 60 ? "60px" : "auto");max-width: 60px;width: 60px; height:60px;}
+.sourceIcon {height: expression(this.width > 102 ? this.height = this.height * 40 / this.width : "auto");width: expression(this.width > 102 ? "102px" : "auto");max-width: 102px;width: 102px; height:102px;}
+.h60{height:60px; line-height:60px; padding:0 0 !important;}
+.TopTitle {font-size: 18px;margin-bottom: 20px;padding-bottom: 15px;}
+.TopTitle h5 {display: inline-block;margin: 0 8px 0 0;text-indent: 8px;font-size: 18px;}
+.TopNavList2 {height: 28px;padding-bottom: 10px;padding-top: 20px;}
+.TopNavList3 {height: 28px;margin-bottom: 10px;padding:20px 0 10px 20px;}
+
+/*正常异常*/
+.normal{padding: 22px 16px 15px;margin-bottom: 15px;box-sizing: border-box;*width:99%;width:100%; }
+.normaltit img{width: 79px;height: 66px;position: relative;top: -10px;display: inline-block; float: left; margin-right: 10px;}
+.normaltit p{position: relative;display: inline-block; margin-top: 9px;}
+.normallist{margin: 22px 0px 0px;float: none;padding: 0px;width: 33.3333%; box-sizing: border-box; display: inline-block; border-right:none;}
+.normallist li{padding: 22px 0px 5px;list-style: outside none none;text-align: center;width: 50%; box-sizing: border-box; float: left; }
+.normallist li p em{ font-size: 24px; margin-right:4px}
+.normallist li span{padding-bottom: 10px; margin: 5px 0 10px; display: inline-block;}
+.abnormalline{padding-right: 15px;margin-right: 15px;}
+.abnormaltit,.abnormallist{ padding: 5px;}
+.abnormaltit{ margin-top: 22px;}
+.abnormaltit li{padding: 5px 5px 5px 15px;}
+.abnormallist{ border-top:none; border-right: none; padding: 0;width:100%; display: inline-block;}
+.abnormallist li{padding: 20px 0px 10px 30px;list-style: outside none none;text-align: left;*width:31.4%;width:33.333%;float: left; box-sizing: border-box;}
+.abnormallist li p{ line-height: 30px; float: left; width:100%}
+.abnormallist li span{ width:100%; display: inline-block; text-align: center;line-height: 30px;}
+.abnormallist li p em{ font-size: 24px;}
+.abnormallist1 li{width:25%}
+.abnormallist2 li{width:50%}
+
+/*安全设置*/
+.safetytit dl{width:100%; display: inline-block;}
+.safetytit dt{width:110px;height:140px; float: left; margin: 15px 30px 15px 0;}
+.safetytit dt img{ border-radius: 5px;}
+.safetytit dt a{ height: 30px; line-height: 30px; text-align: center; display: inline-block;width:100%;}
+.safetytit dd{ margin: 15px 0; padding-top: 20px;}
+.safetytit dd p{ margin-bottom: 10px;}
+.safetydegree{ padding: 40px 0 20px;}
+.safetydegree div{ margin-right: 32px;}
+.safetyplan{width:200px;height: 20px;margin-bottom: 20px;overflow: hidden;}
+.safetyplan span{float: left;width:30%;height: 100%;}
+.safetycon li{width:98%; padding: 33px 1%; float: left;}
+.safetycon li .safetyconright{width:160px; padding-left: 30px;}
+.safetycon li .safetyconright i{ float: left; margin-right: 5px;}
+.safetycon li .safetyconright span{ margin-right: 4px;}
+.safetycon li .safetyconleft b{ margin-right:15px;}
+.safetycon li .safetyconleft{width: 75%;overflow: hidden;display: inline-block;height: 14px;}
+
+/*控制面板 头部*/
+.controlhead{ height: 70px; text-align: center; line-height: 70px; font-size: 12px;}
+.controllist{ width:100%; display:table;}
+.controllist1{ float: left; height: 140px;width:32.2%}
+.controllist1 dt{width:60px; float: left;}
+.controllist1 dt img{ margin: 55px 15px;}
+.controllist1 dd{margin:30px 0 20px 20px; padding-left: 60px;}
+.controllist1 dd h4{ font-weight: normal; font-size: 22px;}
+.controllist1 dd h4 span{font-size: 22px;}
+.controllist1 dd p{ font-size: 14px; margin-bottom:20px;}
+.controllist1 dd div a{ float: left; margin-right:8px}
+.controllist1 dd div span{ margin-right:8px;}
+.controllist2 dd{ }
+.controllist2 dd p span{ margin-right: 10px;}
+.controllist2 dd p span em{ font-size: 22px;}
+.controllist2 dd a{ margin:2px 7px; display: inline-block;}
+.controllist3 dd{ margin-top: 0;}
+.controllist3 dd p{ height:46px; line-height: 46px; margin-bottom: 0; font-size: 12px;}
+.controllist3 dd p span{ margin-right: 20px; font-size: 18px;}
+.controlcon{margin:16px 16px 0 0 ;}
+.controlcon1{ padding:8px 16px;}
+.controlcon1 p{ margin-top:24px;width:100%; display:inline-block; padding-bottom:10px}
+.controlcon1 p b{ margin-right:5px;}
+.controlcon2{ padding:15px;}
+.controlcon2 li{ width:30%; display:inline-block; float:left; height:40px; line-height:40px; margin:8px;  padding-left:8px}
+.controlcon2 li a{}
+.controlcon2 li img{ float:left; width:14px; vertical-align:middle; margin-top:14px; margin-right:10px;}
+.controlcon2 li em{ }
+.controlcon3{ padding:0px 24px; margin-top:20px}
+.controlcon3 .trolcon1{ width:30.9%; float:left; margin:8px; }
+.controlcon3 ul li{width:100%; display:inline-block; float:left; height:40px; line-height:40px;}
+.controlcon3 ul li .trolcon1left img{ width:14px; float:left; margin-top:14px ;margin-right:10px}
+
+/*ajax*/
+.ajax_box{text-align:left;font-size:14px;line-height:23px;padding:10px;margin-top:8px;margin-right:auto;margin-bottom:8px;margin-left:auto;}
+
+/*域名列表页*/
+.exampleine{ height: 200px; margin:16px;font-size: 18px; text-align: center;}
+.domainname { border-radius: 3px; margin-top: 20px;}
+.domainname li{width:33%; float: left; text-align: center; height: 40px; line-height: 40px;}
+.domainname li img{display: inline-block; vertical-align: middle; margin-right: 5px; width: 15px;}
+.warmprompt{ margin-top: 20px; padding: 16px; }
+.warmprompt p{ margin-top: 5px;}
+.warmprompt a{ margin-left: 5px;}
+.newhands{padding: 12px 20px;}
+.newhandslist dl{width:30%; float: left;}
+.newhandslist dt{width: 22px;height: 22px;float: left;border-radius: 12px;line-height: 22px;font-size: 14px;text-align: center;font-family: Arial;font-weight: normal;margin-top: 3px;}
+.newhandslist dd{margin-left: 35px;line-height: 22px;}
+.newhendarr{ width: 18px;height: 14px;float: left;margin: 20px 0px 0px -5%;}
+.top-nav-list .derive{ position: absolute; right: 0; top: 17px;}
+
+/*实例列表页*/
+.collocation{ font-size: 15px; margin-top:90px}
+.examlist{ width: 22%; float: left; padding:0 15px; text-align: center;}
+.examlist a{ width: 22%; float: left; padding:0 15px; text-align: center;}
+.examlist img{ display:inline-block;}
+.examlistcon{ height:130px; padding-top: 17px; }
+.examlist:hover{ text-decoration: none;}
+.examlistcon:hover{}
+.examlistcon p{ margin-top: 5px;}
+.examlistcon p em{ font-size: 16px;}
+.examlistcon p i{  font-size: 16px; }
+.moduleone{ padding:20px;}
+.moduleone ul li{width:16%; padding: 0 15px; float: left; font-size: 14px;}
+.moduleone ul li a,.moduleone ul li em{ font-size: 24px;vertical-align: -4px;}
+.moduletwo{ width:50%; float: left;}
+.moduletwo ul li a,.moduletwo ul li em{ display: block;}
+.modulethree ul li{ font-size: 12px; width:13%; text-align: center; padding: 10px 0;}
+.modulethree ul li em{}
+.modulefore{ height: 35px; line-height: 35px; padding-left: 8px; margin-top: 16px;}
+
+/*费用列表页*/
+.IP{ margin-bottom: 15px;}
+.IP h3{ font-weight: normal; font-size: 24px;}
+.IP h3 img{ margin-right: 10px;}
+.IP a{ text-shadow: none;font-size: 12px;padding: 2px 8px;height: 16px;line-height: 14px; margin-top: 8px; margin-left: 15px; }
+.IP a img{width:12px; margin-right: 3px;}
+.IP a:hover{ text-decoration: none;}
+.costtit{position: relative; margin-top: 10px;height: 40px;line-height: 38px;}
+.costtit span{ margin-left: 16px;font-size: 14px;}
+.costtitright{cursor: pointer; position: absolute;width: 40px;height: 39px;right: 0px;top: 0px;text-align: center;}
+.costtitright img{width:15px; margin-top: 15px; display: inline-block;}
+.costlist{ }
+.costlist td{ text-align: left; padding:11px 20px;}
+.costlist th{padding:11px 20px; text-align: left; border-top: none;}
+.costlist td span{ margin-right: 8px; float: left;}
+.costlist td em{ }
+.costlist2 td{ border: none;}
+.costlist2{ }
+.costlist td.right,.costlist th.right{ text-align: right;}
+.costlist td.right span{ float: right; margin-right: 0;}
+.costtit2right{ margin-right: 10px;}
+.costtit2right input{ margin-left: 10px;}
+.costtitlist{font-size: 12px;border-radius: 0px;position: absolute;top: 100%;right:0;z-index: 1000;padding: 0px;margin: 2px 0px 0px;display:none}
+.costtitlist li a{padding: 7px 16px;display: block;padding: 3px 20px;clear: both;font-weight: normal;line-height:25px;white-space: nowrap;}
+
+/*实例详情页*/
+.details1{width:50%;}
+.details2{width:33.3%}
+.details3{width:25%}
+.details-con{ padding:0 15px; margin-bottom: 30px;}
+
+/*消息订阅*/
+.subscibe td{border:none;padding:8px 5px 8px 20px;text-align:left}
+.costtittake{margin-top:0}
+.subscibe2{margin-bottom:-1px}
+.subscibe2 td{border-left:none;text-align:left;padding:11px 20px;border-top:0 none}
+.titlesave{ position: absolute; top: -5px; right: 0;}
+table{border-collapse:collapse;border-spacing:0}
+
+/*使用记录*/
+.employ{display:inline-block;width:100%;}
+.addinput span img{vertical-align:middle;margin-top:-5px}
+.addinput span .mark{display:inline-block;width:19px}
+.use-layer{width:240px;display:none;height:54px;padding:5px;}
+.addinput li .use-layer p{line-height:18px;max-height:36px;overflow:hidden}
+.addinput-use{margin-left:40px}
+.addinput-use li{position:relative}
+
+/*导出*/
+.newscenter li{float:left}
+.top-title2 h5{vertical-align:middle;display:inline-block}
+.top-title2 ul{vertical-align:middle;display:inline-block}
+.top-title3{ padding-bottom:10px ;}
+.top-title4{ padding-bottom:12px ;}
+.invoice a{margin:0 8px}
+.invoice em{}
+.invoice a:hover{}
+.employ2{margin-top:-1px}
+.employ2 .addinput li span{width:33%;max-width:33%}
+.IP2 a{margin-top:-3px}
+.employall{padding:16px 24px;width:97%}
+.employall h4{font-size:18px;font-weight:400;margin:10px 0}
+.employall p{font-size:14px;line-height:24px}
+.allcon{padding-top:16px;margin-top:16px;font-size:14px;line-height:24px;padding-bottom:calc(16px)}
+
+/*账户总览*/
+.account{padding:0 15px;}
+.accounttop{ font-size: 16px; padding: 40px 0;}
+.accounttop2{ font-size: 12px;}
+.accounttop2 a{ margin: 0 8px;}
+.accounttop2 em{}
+.accounton{ padding: 30px 0 20px 0; margin-bottom: 20px;}
+.accounton2{display:inline-block;width: 50px;height: 20px;}
+.accountlist{ height: 80px;}
+.accountlist li{width:33%; float: left; padding:20px 0; height: 40px;}
+.accountlist li p{ padding:0 40px; }
+.accountlist li p em{ font-size: 16px; margin-right: 5px; font-weight: bold;}
+.accountlist li p a{ margin-left: 10px;}
+.accountlayer{ position:fixed; top:0; left:0; height:100%}
+.accountwait{width:100%; height:100%;}
+.accountcon{ position:fixed; top:50%; left:50%; width:600px; margin-left:-300px; margin-top:-200px;border-radius: 0px;}
+.accountcontit{padding: 15px;}
+.accountcontit .close{ float:right; border:none; margin-top:-8px;text-align:right; font-size:20px; font-weight:normal; cursor:pointer;}
+.accountcon2{ padding:15px}
+.accountcon4{ padding:20px 16px}
+
+/*发票管理*/
+.invoice2{ line-height: 24px;}
+.invoicecon{width: 100%; height: 26px;margin-top: 8px }
+.ticket{ padding: 10px 0; margin-bottom: 10px;}
+.invoicecon .current,.invoiceunit{float:left;display:inline;height:26px;width:33.3%;text-align:center;font-size:14px;line-height:26px;position:relative}
+.invoicecon2 .current,.invoiceunit2{width:50%}
+.invoicecon3 .current,.invoiceunit3{width:20%}
+.invoicearrow{position:absolute;right:-17px;top:0;z-index:111;float:left;display:inline;width:17px;height:26px;overflow:hidden}
+.allcon2{height:400px; overflow-y: scroll; width:90%; margin-left: 5%; border-top:none; font-size: 12px;}
+
+/*提交工单*/
+.submitorder{ border-top: none; padding: 15px;}
+.submitorder li{width:24%; float: left; margin-top:20px ; margin-right: 1%;}
+.submitorder li span{width:38px; float: left; display: inline-block; margin-right: 10px;}
+.submitorder li div{ display: inline-block; width:79%;}
+.submitorder h4{ font-size: 18px; font-weight:normal;}
+.submitorder p{ margin-top: 5px;}

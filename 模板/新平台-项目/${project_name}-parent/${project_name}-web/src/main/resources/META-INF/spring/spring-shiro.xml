@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd" default-lazy-init="true">
+
+    <bean id="dbAuthRealm" class="com.up72.security.shiro.realm.DbAuthRealm">
+    </bean>
+    <bean id="myFormAuthenticationFilter" class="com.up72.security.shiro.filter.MyFormAuthenticationFilter" />
+
+    <!-- Shiro's main business-tier object for web-enabled applications -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="dbAuthRealm" />
+        <property name="cacheManager" ref="shiroEhcacheManager" />
+    </bean>
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="filters">
+            <util:map>
+                <entry key="authc" value-ref="myFormAuthenticationFilter"/>
+            </util:map>
+        </property>
+        <property name="filterChainDefinitionMap" ref="chainDefinitionSectionMetaSource"/>
+        <property name="securityManager" ref="securityManager" />
+        <property name="loginUrl" value="/login.jsp" />
+        <property name="successUrl" value="/index.jsp" />
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+    </bean>
+
+
+    <bean id="chainDefinitionSectionMetaSource" class="com.up72.security.shiro.ChainDefinitionSectionMetaSource">
+        <property name="filterChainDefinitions">
+            <value>
+                /favicon.ico anon
+                /scripts/** anon
+                /styles/** anon
+                /adminStyles/** anon
+                /static/** = anon
+                /login.jsp = anon
+                /jsp/menu/** = authc
+                /jsp/sysConfig/** = authc
+                /admin/** = authc
+            </value>
+        </property>
+    </bean>
+
+
+    <!-- 用户授权信息Cache, 采用EhCache -->
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>
+    </bean>
+
+</beans>

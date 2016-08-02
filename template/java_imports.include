@@ -1,0 +1,14 @@
+import java.util.*;
+
+import com.up72.base.*;
+
+import com.up72.framework.base.*;
+import com.up72.framework.util.*;
+import com.up72.framework.web.util.*;
+import com.up72.framework.page.*;
+import com.up72.framework.page.impl.*;
+
+import ${basepackage}.model.*;
+import ${basepackage}.dao.*;
+import ${basepackage}.service.*;
+import ${basepackage}.vo.query.*;

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>
+		代码生成器配置文件: 
+		1.会为所有的property生成property_dir属性,如pkg=com.company => pkg_dir=com/company
+		2.可以引用环境变量: ${env.JAVA_HOME} or System.properties: ${user.home},property之间也可以相互引用
+	</comment>
+	<entry key="company">cn.bjglory</entry>
+	<entry key="basepackage">cn.bjglory.jwxt.test</entry>
+	<entry key="component">test</entry>
+	<entry key="project_name">test</entry>
+	<entry key="version">2.1.0-SNAPSHOT</entry>
+	<!-- 生成页面的主目录 -->
+	<entry key="project_dir_path">jwxt</entry>
+
+	<!-- jsp namespace: web/${namespace}/${className}/list.jsp -->
+	<entry key="namespace"></entry>
+	<entry key="author">gaolei</entry>
+
+	<!-- 代码输出路径 -->
+	<entry key="outRoot">J:/AUTO_CODE</entry>
+	
+	<!-- 生成代码是否去除前缀,默认(false)不去除前缀 。如： 当true 时，auth_member生成java代码时会将“auth_” 去除  -->
+	<entry key="removePrefix">false</entry>
+	
+	<!-- 当“removePrefix=false”时 tableRemovePrefixes生效. 需要移除的表名前缀,使用逗号进行分隔多个前缀,示例值: t_,v_ -->
+	<entry key="tableRemovePrefixes"></entry>
+	
+	<entry key="jdbc.username">c##jwxt_btbu</entry>
+	<entry key="jdbc.password">jwxt</entry>
+
+	<entry key="jdbc_username">c##jwxt_btbu</entry>
+	<entry key="jdbc_password">jwxt</entry>
+
+	<!-- oracle需要指定jdbc.schema,并且可能要大写，其它数据库忽略此项配置  -->
+	<entry key="jdbc.schema">C##JWXT_BTBU</entry>
+	<entry key="jdbc.catalog"></entry>
+	
+	<!-- 数据库类型至java类型映射  -->
+	<entry key="java_typemapping.java.sql.Timestamp">java.util.Date</entry>
+	<entry key="java_typemapping.java.lang.Boolean">Integer</entry>
+	<entry key="java_typemapping.java.sql.Date">java.util.Date</entry>
+	<entry key="java_typemapping.java.sql.Time">java.util.Date</entry>	
+	<entry key="java_typemapping.java.lang.Byte">Integer</entry>
+	<entry key="java_typemapping.java.lang.Short">Integer</entry>
+	<entry key="java_typemapping.java.math.BigDecimal">Long</entry>
+	<entry key="java_typemapping.java.sql.Clob">String</entry>
+	
+	<entry key="jdbc.url">jdbc:oracle:thin:@127.0.0.1:1521:orcl</entry>
+	<entry key="jdbc.driver">oracle.jdbc.driver.OracleDriver</entry>
+
+	<entry key="jdbc_url">jdbc:oracle:thin:@127.0.0.1:1521:orcl</entry>
+	<entry key="jdbc_driver">oracle.jdbc.driver.OracleDriver</entry>
+</properties>
